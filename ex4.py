@@ -12,7 +12,7 @@ class Block(pygame.sprite.Sprite):
     def __init__(self):
         super().__init__()
 
-        self.image = pygame.image.load('/home/user1/Documents/user2/small/enemy.png').convert()
+        self.image = pygame.image.load('./small/enemy.png').convert()
         self.image.set_colorkey(white)
 
         self.rect = self.image.get_rect()
@@ -39,7 +39,7 @@ class Enemy(pygame.sprite.Sprite):
     def __init__(self):
         super().__init__()
 
-        self.image = pygame.image.load('/home/user1/Documents/user2/small/1.png').convert()
+        self.image = pygame.image.load('./small/1.png').convert()
         self.image.set_colorkey(black)
 
         self.rect = self.image.get_rect()
@@ -55,7 +55,7 @@ class Enemy2(pygame.sprite.Sprite):
     def __init__(self):
         super().__init__()
 
-        self.image = pygame.image.load('/home/user1/Documents/user2/small/6.png').convert()
+        self.image = pygame.image.load('./small/6.png').convert()
         self.image.set_colorkey(black)
 
         self.rect = self.image.get_rect()
@@ -71,7 +71,7 @@ class Enemy3(pygame.sprite.Sprite):
     def __init__(self):
         super().__init__()
 
-        self.image = pygame.image.load('/home/user1/Documents/user2/small/3.png').convert()
+        self.image = pygame.image.load('./small/3.png').convert()
         self.image.set_colorkey(black)
 
         self.rect = self.image.get_rect()
@@ -89,7 +89,7 @@ class Player(pygame.sprite.Sprite):
 
         super().__init__()
 
-        self.image = pygame.image.load('/home/user1/Documents/user2/small/5.png').convert()
+        self.image = pygame.image.load('./small/5.png').convert()
         self.image.set_colorkey(black)
 
         self.rect = self.image.get_rect()
@@ -111,7 +111,7 @@ class Bullet(pygame.sprite.Sprite):
 
     def __init__(self):
         super().__init__()
-        self.image = pygame.image.load('/home/user1/Documents/user2/small/bullet5.png').convert()
+        self.image = pygame.image.load('./small/bullet5.png').convert()
         self.image.set_colorkey(white)
         # self.image = pygame.Surface([6, 25])
         # self.image.fill(white)
@@ -125,7 +125,7 @@ class EBullet(pygame.sprite.Sprite):
 
     def __init__(self):
         super().__init__()
-        self.image = pygame.image.load('/home/user1/Documents/user2/small/bullet3.png').convert()
+        self.image = pygame.image.load('./small/bullet3.png').convert()
         self.image.set_colorkey(white)
         # self.image = pygame.Surface([6, 25])
         # self.image.fill(white)
@@ -139,7 +139,7 @@ class E2Bullet(pygame.sprite.Sprite):
 
     def __init__(self):
         super().__init__()
-        self.image = pygame.image.load('/home/user1/Documents/user2/small/bullet5.png').convert()
+        self.image = pygame.image.load('./small/bullet5.png').convert()
         self.image.set_colorkey(white)
         # self.image = pygame.Surface([6, 25])
         # self.image.fill(white)
@@ -155,10 +155,10 @@ pygame.init()
 game_display_width = 510
 game_display_height = 635
 object_width = 50
-background = pygame.image.load('/home/user1/Documents/user2/small/b2.jpg')
-title = pygame.image.load('/home/user1/Documents/user2/small/m2.PNG')
+background = pygame.image.load('./small/b2.jpg')
+title = pygame.image.load('./small/m2.PNG')
 game_display = pygame.display.set_mode([game_display_width, game_display_height])
-font = pygame.font.Font('/home/user1/Documents/user2/Algerian Regular.ttf', 25)
+font = pygame.font.Font('./small/Algerian Regular.ttf', 25)
 
 
 def end_game():
@@ -171,7 +171,7 @@ def display_background():
 
 
 def text_sizer(surf, text, size, x, y):
-    font = pygame.font.Font('/home/user1/Documents/user2/Algerian Regular.ttf', 30)
+    font = pygame.font.Font('./small/Algerian Regular.ttf', 30)
     textsurf = font.render(text, True, silver)
     textrect = textsurf.get_rect()
     textrect.midtop = (x, y)
@@ -224,7 +224,7 @@ def game_intro():
  
 
 def scored(count):
-    font = pygame.font.Font('/home/user1/Documents/user2/Algerian Regular.ttf', 25)
+    font = pygame.font.Font('./small/Algerian Regular.ttf', 25)
     text = font.render("SCORE : " + str(count), True, white)
     game_display.blit(text, (0, 0))
 
