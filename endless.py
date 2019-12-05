@@ -4,8 +4,8 @@ import time
 
 pygame.mixer.pre_init(44100, -16, 1, 512)
 pygame.init()
-pygame.mixer.music.load("sounds/bgMusic.ogg")
-pygame.mixer.music.play(-1,0.0)
+
+laserSound = pygame.mixer.Sound("sounds/laser.ogg")
 
 black = (0, 0, 0)
 white = (255, 255, 255)
@@ -291,6 +291,7 @@ while not done:
             paused()
         if event.type == pygame.KEYDOWN:
             if event.key == pygame.K_UP:
+                pygame.mixer.Sound.play(laserSound)
                 bullet = Bullet()
                 bullet2 = Bullet()
                 bullet.rect.x = player.rect.x
@@ -421,6 +422,7 @@ while done:
             paused()
         if event.type == pygame.KEYDOWN:
             if event.key == pygame.K_UP:
+                pygame.mixer.Sound.play(laserSound)
                 bullet = Bullet()
                 bullet2 = Bullet()
                 bullet.rect.x = player.rect.x
