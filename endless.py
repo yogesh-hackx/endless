@@ -2,6 +2,11 @@ import pygame
 import random
 import time
 
+pygame.mixer.pre_init(44100, -16, 1, 512)
+pygame.init()
+
+laserSound = pygame.mixer.Sound("sounds/laser.ogg")
+
 black = (0, 0, 0)
 white = (255, 255, 255)
 space = (0, 76, 153)
@@ -286,6 +291,7 @@ while not done:
             paused()
         if event.type == pygame.KEYDOWN:
             if event.key == pygame.K_UP:
+                pygame.mixer.Sound.play(laserSound)
                 bullet = Bullet()
                 bullet2 = Bullet()
                 bullet.rect.x = player.rect.x
@@ -416,6 +422,7 @@ while done:
             paused()
         if event.type == pygame.KEYDOWN:
             if event.key == pygame.K_UP:
+                pygame.mixer.Sound.play(laserSound)
                 bullet = Bullet()
                 bullet2 = Bullet()
                 bullet.rect.x = player.rect.x
