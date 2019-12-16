@@ -212,6 +212,7 @@ def game_intro():
         for event in pygame.event.get():
             if event.type == pygame.KEYDOWN:
                 if event.key == pygame.K_RETURN:
+                    pygame.mixer.music.stop()
                     return
                 if event.key == pygame.K_q:
                     end_game()
