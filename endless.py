@@ -6,6 +6,8 @@ pygame.mixer.pre_init(44100, -16, 1, 512)
 pygame.init()
 
 laserSound = pygame.mixer.Sound("sounds/laser.ogg")
+pygame.mixer.music.load("sounds/bgMusic.ogg")
+pygame.mixer.music.play(-1,0.0)
 
 black = (0, 0, 0)
 white = (255, 255, 255)
